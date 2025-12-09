@@ -6,7 +6,7 @@ name: Learn  Workflow
 
 on:   
   push:
-    branches: [master]
+    branches: [main]
 
 
 # Jobs to run
