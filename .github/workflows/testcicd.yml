@@ -1,0 +1,37 @@
+
+# Name of the workflow
+name: Learn  Workflow
+
+# Events that trigger this workflow
+
+on:   
+  push:
+    branches: [master]
+
+
+# Jobs to run
+jobs:
+  setup_django project:
+    runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 4
+      matrix:
+        python-version: [3.12]
+        #Steps to excute in this job
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v6
+      - name: setup python ${{matrix.python-version}}
+        uses: actions/setup-python@v6 
+        with:
+          python-version:${{matrix.python-version}}
+      - name: instal dependences
+        run: pip install -r requirements.txt
+      - name: run test
+        run: python manage.py test
+       
+    
+        
+
+  
+ 

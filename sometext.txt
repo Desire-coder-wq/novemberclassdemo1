@@ -1,1 +1,4 @@
 Hello
+  STEPS
+ 1.Install the dependences
+ 2.Run the tests
